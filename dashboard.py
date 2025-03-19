@@ -78,11 +78,6 @@ fig4, ax4 = plt.subplots(figsize=(10, 5))
 sns.heatmap(filtered_data.pivot_table(values='Sales', index='Category', columns='Discount', aggfunc='sum'), cmap='coolwarm', annot=True)
 st.pyplot(fig4)
 
-# 🎭 **Interactive Pie Chart - Sales Distribution by Region**
-st.markdown("### 🌍 Sales Distribution by Region")
-fig5 = px.pie(filtered_data, values='Sales', names='Region', title="Sales Distribution by Region",
-              color_discrete_sequence=px.colors.sequential.RdBu)
-st.plotly_chart(fig5)
 
 # 🏆 **Q1: AOV for 2017 where Ship mode is Second Class**
 aov_2017 = data_df[(data_df['Year'] == 2017) & (data_df['Ship Mode'] == 'Second Class')]
